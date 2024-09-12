@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="myUnion.js" rel="type/javascript" defer></script>
+</head>
+<body>
+    <p id="demo"></p>
+    <script>
+        // setTimeout(myDisplay,3000)
+        function myDisplay(some){
+            document.getElementById("demo").innerHTML = some;
+        }
+        function addTwoNumber(num1,num2){
+            let sum = num1 + num2;
+            return sum;
+        }
+        let result = addTwoNumber(1,43);
+        myDisplay(result)
+        // let myPromise = new Promise(function(resolve,reject){
+        //     let x = 1;
+        //     if(x == 0){
+        //         resolve('OK');
+        //     }else{
+        //         reject("ERROR");
+        //     }
+        // })
+        // myPromise.then(
+        //     function(success){myDisplay(success)},
+        //     function(error){myDisplay(error)}
+        // )
+        // setTimeout(CallBack,10000)
+        // function CallBack(num1,num2,myCallBack){
+        //     let sum = num1 + num2;
+        //     myCallBack(sum)
+        //     alert(sum)
+        // }
+        // CallBack(1,1,myDisplay)
+    </script>
+</body>
+</html>
+

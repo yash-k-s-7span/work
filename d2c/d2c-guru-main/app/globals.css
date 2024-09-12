@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 75%;
+}
+
+td,
+th {
+  border: 1px solid #888888;
+  text-align: left;
+  padding: 10px;
+}
+
+tr > td:first-child {
+  width: 220px;
+}
+
+select {
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  background-image: url(https://api.iconify.design/ic:outline-keyboard-arrow-down.svg);
+  background-position: calc(100% - 8px) center;
+  background-repeat: no-repeat;
+}
+
+.filters__summary[open] .plus__icon {
+  display: none;
+}
+.filters__summary .minus__icon {
+  display: none;
+}
+.filters__summary[open] .minus__icon {
+  display: block;
+}
+.categories {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.social-icon svg {
+  @apply h-7 w-7;
+}
+
+::-webkit-scrollbar {
+  @apply w-1.5 h-1.5;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  @apply rounded;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-300 rounded;
+}
+.social-icon svg {
+  @apply h-7 w-7;
+}
+
+@keyframes upDown {
+  0%,
+  100% {
+    transform: translateY(-10%);
+  }
+  50% {
+    transform: none;
+  }
+}
+
+@keyframes downUp {
+  0%,
+  100% {
+    transform: none;
+  }
+  50% {
+    transform: translateY(-10%);
+  }
+}
+.animate-up-down {
+  animation: upDown 4s infinite;
+}
+
+.animate-down-up {
+  animation: downUp 4s infinite;
+}
+
+.cls-1, .cls-2 {
+  fill: #fff;
+  stroke-width: 0px;
+}
+
+.cls-2 {
+  fill-rule: evenodd;
+}
