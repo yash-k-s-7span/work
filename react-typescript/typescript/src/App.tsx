@@ -15,6 +15,16 @@ import Box from './components/use-context/Box'
 import { UserContextProvider } from './components/use-context/UserContext'
 import Users from './components/use-state-hook/User'
 import { User } from './components/use-context/User'
+import DomainRef from './components/use-ref/DomainRef'
+import MutatingRef from './components/use-ref/MutatingRef'
+import Profile from './component-props/Profile'
+import { Private } from './component-props/Private'
+import { List } from './generics-props/List'
+import { RestrictingProps } from './restricting-props/RandomNumber'
+import { Toast } from './template-literals/Toast'
+import { CustomButton } from './html/Button'
+import { CustomInput } from './html/Input'
+import { Text } from './polymorphic-component/Text'
 
 function App() {
   const person = {
@@ -54,12 +64,47 @@ function App() {
       {/* <Input value='' handleChange={(event) => console.log(event)}/> */}
       {/* <Container styles={{border:'1px solid red',padding:'1rem'}}/> */}
       {/* <Counter/>           */}
-      <ThemeProvider >
+      {/* <ThemeProvider >
           <Box/>
-      </ThemeProvider>
+      </ThemeProvider> */}
       {/* <UserContextProvider>
         <User/>
       </UserContextProvider> */}
+      {/* <DomainRef/>
+      <MutatingRef/> */}
+      {/* <Counter/> */}
+      {/* Component props */}
+      {/* <Private isLoggedIn={false} component={Profile}/> */}
+      {/* <List items={['yash','yesh']}  onClick={(item) => console.log(item)} render={(item) => <h1>{item}</h1> } />
+      <List items={[1,2,3]} onClick={(item) => console.log(item)}  render={(item) => <h1>{item}</h1>}/>
+      <List items={[
+                {
+                 
+                  name:'yash',
+                  email:'yash@gmail.com'
+                },
+                {
+               
+                  name:'yesh',
+                  email:'yesh@gmail.com'}
+                ]
+                } onClick={(item) => console.log(item)} render={(items) => (
+                  <div>
+                    <h2>{items.name}</h2>
+                    <h2>{items.email}</h2>
+                  </div>
+                )}/> */}
+
+        {/* <RestrictingProps value={10} isPositive />
+
+        <Toast position='center'/>
+        <CustomButton variant='primary' onClick={() => console.log('clicked')}>
+          Hello 
+        </CustomButton>
+        <CustomInput inputed='yash'/> */}
+        <Text as='h1' size='lg'  color='primary'>Hello</Text>
+        <Text as='p' size='md' color='secondary'>There</Text>
+        <Text as='pre' size='sm'>Data</Text>
     </>
   )
 }

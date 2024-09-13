@@ -77,7 +77,7 @@ const BrandDetail = async ({ params }) => {
           "twitter",
           "linkedin",
           "youtube",
-          "pintrest",
+          "pinterest",
           "headquarters",
           "founders.dg_founders_id.id",
           "founders.dg_founders_id.name",
@@ -89,6 +89,7 @@ const BrandDetail = async ({ params }) => {
     .then((res) => {
       if (res.length) {
         return {
+
           name: res[0].name,
           logo: res[0].logo?.id,
           website: res[0].website,
@@ -103,7 +104,7 @@ const BrandDetail = async ({ params }) => {
           twitter: res[0].twitter,
           linkedin: res[0].linkedin,
           youtube: res[0].youtube,
-          pintrest: res[0].pintrest,
+          pinterest: res[0].pinterest,
           founders: res[0].founders ?? [],
           headquarters: res[0].headquarters ?? [],
           hero_gallery: res[0].hero_gallery ?? "",
@@ -125,7 +126,7 @@ const BrandDetail = async ({ params }) => {
     { name: "Twitter", url: brandDetail?.twitter },
     { name: "LinkedIn", url: brandDetail?.linkedin },
     { name: "YouTube", url: brandDetail?.youtube },
-    { name: "Pinterest", url: brandDetail?.pintrest },
+    { name: "Pinterest", url: brandDetail?.pinterest },
   ].filter((link) => link.url);
 
   const similarTags = brandDetail?.tags?.map((item) => {

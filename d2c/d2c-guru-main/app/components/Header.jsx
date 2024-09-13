@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Logo } from "./icons/logo";
 import { Menu } from "./icons/menu";
 import { Close } from "./icons/close";
@@ -14,6 +14,7 @@ export default function Header() {
   const [lastScrollTop, setLastScrollTop] = useState(0);
   const [nav, setNav] = useState(false);
   const router = useRouter();
+  const menuRef = useRef(null);
   const navLinks = [
     { href: "/categories", label: "Categories" },
     { href: "/brands", label: "Brands" },
@@ -23,6 +24,29 @@ export default function Header() {
       label: "Blogs",
     },
   ];
+
+  // To close the ul when the width is greater then 768 or at requirement size
+  useEffect(() => {
+    const handleResize = () => {
+      if(window.innerWidth > 768 && menuRef.current){
+        menuRef.current.classList.add('hidden');
+      }else if(window.innerWidth <= 768 && menuRef.current){
+        menuRef.current.classList.remove('hidden')
+      }
+    }
+    window.addEventListener('resize',handleResize)
+    handleResize();
+    return () => {
+      window.removeEventListener('resize',handleResize);
+    }
+  },[])
+
+  const ToggleNav = () => {
+    setNav(!nav);
+    if(menuRef.current){
+      menuRef.current.classList.toggle('hidden');
+    }
+  }
 
   useEffect(() => {
     const handleScroll = () => {
@@ -45,12 +69,16 @@ export default function Header() {
       setLastScrollTop(currentScrollTop <= 0 ? 0 : currentScrollTop);
     };
 
+
+
     window.addEventListener("scroll", handleScroll);
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, [lastScrollTop]);
+
+
 
   return (
     <header
@@ -89,7 +117,8 @@ export default function Header() {
             </div>
 
             {nav && (
-              <ul className="px-20 pt-28 z-30 absolute top-0 left-0 w-full h-screen bg-gradient-to-b from-black to-gray-800 text-white">
+              <ul ref={menuRef} className={`px-20 pt-28 z-30 absolute top-0 left-0 w-full h-screen bg-gradient-to-b from-black to-gray-800 text-white 
+              ${nav ? '': 'hidden'}`}>
                 <li className="flex flex-col gap-4 cursor-pointer capitalize text-lg">
                   <button
                     className="flex justify-center items-center"

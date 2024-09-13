@@ -6,6 +6,7 @@ import { readItems } from "@directus/sdk";
 import AboutUsHero from "../components/about/hero";
 import BrandStatistics from "../components/about/statistics";
 import BrandCardContainer from "../components/brand-card-container";
+import FacebookIcon from "../components/icons/facebook";
 
 export const metadata = {
   title: "About us | D2C Guru",
@@ -66,7 +67,7 @@ async function page() {
           linkClassName="bg-white p-3 rounded-full"
           titleClassName="font-extrabold font-display text-white italic text-2xl md:text-5xl text-center"
           socialLinks={socialLinks}
-          title="Follow us on Instagram"
+          title="Follow us on Instagram"  
           iconClassName="social-icon"
         />
         <BrandCardContainer

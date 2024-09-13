@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "vite-plugin-qrcode": "^0.2.3"
+  }
+}

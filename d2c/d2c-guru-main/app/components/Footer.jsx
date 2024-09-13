@@ -1,7 +1,7 @@
 import NavLink from "../ui/nav-links";
 import FacebookIcon from "@/app/components/icons/facebook";
 import InstagramIcon from "@/app/components/icons/instagram";
-import TwitterIcon from "@/app/components/icons/twitter";
+import Twitter from "@/app/components/icons/twitter";
 import DribbbleIcon from "@/app/components/icons/Dribble";
 import SocialMedia from "./social-media";
 import { version } from "./../../package.json";
@@ -20,7 +20,7 @@ function Footer() {
       target: "_blank",
       icon: InstagramIcon,
     },
-    // { url: "https://www.twitter.com", target: "_blank", icon: TwitterIcon },
+    { url: "https://www.twitter.com", target: "_blank", icon: Twitter },
     // { url: "https://www.dribbble.com", target: "_blank", icon: DribbbleIcon },
   ];
   return (

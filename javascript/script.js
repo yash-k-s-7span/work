@@ -201,7 +201,44 @@
 // for (const letter of iterator) {
 //   console.log(letter);
 // }
-const arr = [1,2,3];
-const res = arr.with(2,'jj');//index,value
-console.log(res) 
-console.log(arr)
+// const arr = [1,2,3];
+// const res = arr.with(2,'jj');//index,value
+// console.log(res) 
+// console.log(arr)
+
+// const array = [1,2,3,4,5];
+// let initialValue = 0
+// let res = array.reduce((x,y) => x + y,initialValue);
+// console.log(res)
+
+// const input = [1,-4,12,0,-3,29,-150];
+// const output = input.filter((x) => x > 0).reduce((x,y) => x + y);
+// console.log(output)
+
+
+// function difference(a,b){
+//     return Math.abs(a - b);
+// }
+// console.log(difference(1,5))
+// console.log(difference(5,3))
+
+
+// const input = [12,46,32,64];
+// const mean = input.reduce((x,y) => x + y)/input.length;
+// console.log(mean)
+// const sortedInput = [...input].sort((a,b) => a - b);
+// console.log(sortedInput);
+// let median;
+// if(sortedInput.length % 2 === 0){
+//     median = (sortedInput[sortedInput.length / 2 - 1] + sortedInput[sortedInput.length / 2])/2  
+// }else{
+//     median = sortedInput[Math.floor(sortedInput.length / 2)]
+// }
+
+// const res = {mean:mean,median:median};
+// console.log(res)
+
+const input = 'George Raymond Richard Martin';
+const res = input.split(' ').map((x) => x[0]).join('');
+console.log(res)
+
